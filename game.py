@@ -10,6 +10,8 @@ from zipfile import ZipFile
 
 class Game:
     def __init__(self):
+        # Load the image (for example, "./assets/square_overlay.png")
+        self.overlay_image = pygame.image.load("./assets/skibidi-toilet-original.png").convert_alpha()
         self.active = False
         self.notes = []
         self.camera = Camera()
@@ -185,6 +187,11 @@ class Game:
 
         # draw square
         self.world.square.draw(screen, sqrect)
+
+        # Draw the image overlay at the square's position
+        overlay_rect = self.overlay_image.get_rect(center=sqrect.center)
+        screen.blit(self.overlay_image, overlay_rect)
+
 
         if not Config.theatre_mode:
             # keystrokes

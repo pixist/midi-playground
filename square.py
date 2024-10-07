@@ -104,6 +104,13 @@ class Square:
             sq_surf = self.get_surface(
                 tuple(sqrect.inflate(-int(Config.SQUARE_SIZE / 5), -int(Config.SQUARE_SIZE / 5))[2:]))
             screen.blit(sq_surf, sq_surf.get_rect(center=sqrect.center))
+        if Config.theme == "purple" and make_glowy2 is not None:
+            self.draw_glowing3(screen, sqrect)
+        else:
+            pygame.draw.rect(screen, (0, 0, 0), sqrect)
+            sq_surf = self.get_surface(
+                tuple(sqrect.inflate(-int(Config.SQUARE_SIZE / 5), -int(Config.SQUARE_SIZE / 5))[2:]))
+            screen.blit(sq_surf, sq_surf.get_rect(center=sqrect.center))    
 
     @x.setter
     def x(self, val: int):

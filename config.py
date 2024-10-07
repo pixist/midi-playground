@@ -133,6 +133,16 @@ class Config:
                 pygame.Color(249, 194, 46),
                 pygame.Color(83, 179, 203)
             ]
+        },
+        "purple": {
+            "hallway": pygame.Color(165, 94, 234),  # Purple color from #a55eea
+            "background": pygame.Color(75, 101, 132),  # Background updated to #4b6584 (a cool, muted blue-gray)
+            "square": [
+                pygame.Color(224, 26, 79),
+                pygame.Color(173, 247, 182),
+                pygame.Color(249, 194, 46),
+                pygame.Color(83, 179, 203)
+            ]
         }
     }
 
