@@ -97,20 +97,13 @@ class Square:
         square_color_index = round((self.dir_x + 1) / 2 + self.dir_y + 1)
         self.register_past_color(get_colors()["square"][square_color_index % len(get_colors()["square"])])
 
-        if Config.theme == "dark_modern" and make_glowy2 is not None:
+        if Config.theme == ("dark_modern" or "purple") and make_glowy2 is not None:
             self.draw_glowing3(screen, sqrect)
         else:
             pygame.draw.rect(screen, (0, 0, 0), sqrect)
             sq_surf = self.get_surface(
                 tuple(sqrect.inflate(-int(Config.SQUARE_SIZE / 5), -int(Config.SQUARE_SIZE / 5))[2:]))
             screen.blit(sq_surf, sq_surf.get_rect(center=sqrect.center))
-        if Config.theme == "purple" and make_glowy2 is not None:
-            self.draw_glowing3(screen, sqrect)
-        else:
-            pygame.draw.rect(screen, (0, 0, 0), sqrect)
-            sq_surf = self.get_surface(
-                tuple(sqrect.inflate(-int(Config.SQUARE_SIZE / 5), -int(Config.SQUARE_SIZE / 5))[2:]))
-            screen.blit(sq_surf, sq_surf.get_rect(center=sqrect.center))    
 
     @x.setter
     def x(self, val: int):

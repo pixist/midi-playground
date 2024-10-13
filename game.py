@@ -11,7 +11,7 @@ from zipfile import ZipFile
 class Game:
     def __init__(self):
         # Load the image (for example, "./assets/square_overlay.png")
-        self.overlay_image = pygame.image.load("./assets/skibidi-toilet-original.png").convert_alpha()
+        self.overlay_image = pygame.transform.scale(pygame.image.load("./assets/skibidi-toilet-original.png").convert_alpha(),(150,200))
         self.active = False
         self.notes = []
         self.camera = Camera()
